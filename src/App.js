@@ -1,4 +1,5 @@
-import Tours from "./components/Tours"
+import Tours from "./components/Tours";
+import Home from "./components/Home";
 import Data from "./data";
 import { useState } from "react";
 
@@ -15,9 +16,9 @@ export default function App(){
 
     if(tours.length == 0){
         return(
-            <div className="refersh">
-                <h2>No Tours Left</h2>
-                <button onClick={()=>setData(Data)}>Refersh</button>
+            <div className="refresh">
+                <h2 className="refresh-head">No Tours Left</h2>
+                <button className="btn-white "onClick={()=>setData(Data)}>Refersh</button>
             </div>
         );
     }

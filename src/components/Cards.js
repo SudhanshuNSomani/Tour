@@ -11,23 +11,25 @@ const Card = ({id , name , info , image , price  , removeTour} )=>{
     
     return(
         <div className="card">
+            <img src={image} className="location-img" />
            <div className="tour-info">
-                <img src={image} className="location-img" />
+                
                 <div className="tours-details">
-                    <p className="tour-price">{price}</p>
+                    <p className="tour-price">₹ {price}</p>
                     <p className="tour-name">{name}</p>            
                 </div>
                 <div className="tour-description">
                     {description}
                     <span className="read-more" onClick={readMoreHandler}>
-                        {ReadMore ? 'Show Less' : 'Read More'}
+                        {ReadMore ? '   ' + 'Show Less' : 'Read More'}
                     </span>
                 </div>
+                <button className="btn-purple" onClick={()=>removeTour(id)}>
+                    Not Interested
+                </button>
             </div>
            
-           <button className="btn-not-interested" onClick={()=>removeTour(id)}>
-               Not Interested
-           </button>
+          
            
         </div>
     );
